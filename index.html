@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>QR-Code</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Crie seu QR-Code</h1>
+        
+        <div class="container-qr">
+            <canvas id="qr"></canvas>
+        </div>
+    
+        <div class="control-input">
+            <label for="">Digite o conteúdo do QR-Code</label>
+            <input id="content" type="text">
+            <button id="btn-generate" onclick=generate()>Gerar</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="logo">
+            <a href="http://dev-th.com.br"><img
+                src="http://dev-th.com.br/busca-cnpj/static/media/LogoDevTH.0dc427fae3ec2235b753.png" alt=""></a>
+          </div>
+          <div class="container-social">
+            <a href="https://github.com/thisd92">
+              <img src="http://dev-th.com.br/src/assets/imgs/github.png" class="icon" width="35" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/thiago-dutra-a8359a206/">
+              <img src="http://dev-th.com.br/src/assets/imgs/linkedin.png" class="icon" width="35" alt="">
+            </a>
+            <a href="https://www.instagram.com/ts_dutra/">
+              <img src="http://dev-th.com.br/src/assets/imgs/instagram.png" class="icon" width="35" alt="">
+            </a>
+            <a href="https://www.facebook.com/thiago.dutra.18/">
+              <img src="http://dev-th.com.br/src/assets/imgs/facebook.png" class="icon" width="35" alt="">
+            </a>
+          </div>
+    </footer>
+
+    <script src="./js/qrious.min.js"></script> 
+    <script>
+        const generate = () => 
+        (function() {
+            var content = document.getElementById('content')
+            var qr = new QRious({
+          element: document.getElementById('qr'),
+          value: content.value,
+          size: 300,
+          padding: 25
+        });
+      })();
+    </script> 
+</body>
+
+</html>
